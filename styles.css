@@ -163,6 +163,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   transition: left 0.3s ease-in-out; /* Smooth transition */
+  overflow-y: auto; /* Add vertical scroll */
 }
 
 .sidebar.show {
