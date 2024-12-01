@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harry Potter Studio</title>
+    <link rel="stylesheet" href="homepage.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="header">
+      <div class="header-1">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="ham-open-btn"
+          onclick="toggleSB()"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+
+        <div class="logo-container">
+          <a
+            class="header-logo"
+            href="homepage.html"
+            style="margin-top: 0px; margin-bottom: 0px"
+          >
+            <div class="logo">
+              <picture class="image-container">
+                <img src="harrypotterlogo.png" alt="Harry Potter Logo" />
+              </picture>
+            </div>
+          </a>
+        </div>
+        <div class="search-auth">
+          <div class="search-bar">
+            <input type="text" placeholder="Search" />
+            <button type="button">
+              <img src="search-icon.png" alt="Search" />
+            </button>
+          </div>
+          <div class="header-btn">
+            <button class="login-btn">Log In</button>
+            <button class="signup-btn">Sign Up</button>
+          </div>
+        </div>
+      </div>
+      <div class="nav-bar">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#characters">Characters</a></li>
+            <li><a href="#houses">Houses</a></li>
+            <li><a href="#wands">Wands</a></li>
+            <li><a href="#horcruxes">Horcruxes</a></li>
+            <li><a href="#triwizard">Triwizard Tournament</a></li>
+            <li><a href="#quidditch">Quidditch</a></li>
+            <li><a href="#places">Places</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <div class="sidebar">
+      <ul>
+        <li class="exit-sidebar" onclick="toggleSB()">
+          <p>E</p>
+          <a style="width: auto">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="ham-hide-btn"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+              />
+            </svg>
+          </a>
+          <p>IT</p>
+        </li>
+        <li><a href="#characters">Characters</a></li>
+        <li><a href="#houses">Houses</a></li>
+        <li><a href="#wands">Wands</a></li>
+        <li><a href="#horcruxes">Horcruxes</a></li>
+        <li><a href="#triwizard">Triwizard Tournament</a></li>
+        <li><a href="#quidditch">Quidditch</a></li>
+        <li><a href="#places">Places</a></li>
+      </ul>
+    </div>
+    <section class="hero-container">
+      <div class="char-container"></div>
+    </section>
+    <footer>
+      <div class="footer-flex">
+        <div class="footer-links">
+          <a href="https://www.harrypotter.com/terms">Terms & Conditions</a>
+          <a href="#accordion">FAQs</a>
+          <a href="https://www.harrypotter.com/privacy">Privacy & Cookies</a>
+        </div>
+        <div class="footer-links">
+          <a href="">Children's Privacy Policy</a>
+          <a href="">Legals</a>
+        </div>
+
+        <!-- <div class="footer-social">
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div> -->
+        <div class="footer-logo-container">
+          <a class="footer-logo" href="homepage.html">
+            <img src="harrypotterlogo.png" alt="Harry Potter Logo" />
+          </a>
+        </div>
+      </div>
+      <br />
+      <div class="footer-text">
+        <p>&copy; WIZARDING WORLD DIGITAL 2024</p>
+      
+          <strong>Looking for Wizarding World?</strong> 
+          <a href="https://www.harrypotter.com">HarryPotter.com</a> is the
+          official home of Harry Potter, Fantastic Beasts, and the Wizarding
+          World.
+        </p>
+        <p>
+          Brought to you by Wizarding World Digital and its parent company
+          Warner Bros. Entertainment Inc., delivering the latest news and
+          official products from the Wizarding World and our partners.
+        </p>
+        <p>
+          All characters and elements &copy; &trade; Warner Bros. Entertainment
+          Inc. Publishing Rights &copy; J.K. Rowling.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
