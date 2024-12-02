@@ -11,8 +11,6 @@ body {
   height: 100vh; /* Ensure the body takes full height */
 }
 /* Header Styles */
-.header-container {
-}
 .header {
   margin: 0 auto;
   height: auto;
@@ -217,13 +215,19 @@ nav a {
 nav a:hover {
   color: #d3a625; /* Hogwarts house colors or gold */
 }
-
+button.ham-open-btn {
+  border: none; /* Remove border */
+  background: none; /* Remove background color */
+  box-shadow: none; /* Remove any shadow */
+  color: #641e1e; /* Set the color */
+  font: inherit; /* Use the font styles of the parent */
+  cursor: pointer; /* Ensure it behaves like a button */
+}
 .ham-open-btn {
   cursor: pointer;
   position: absolute;
   width: 26px;
   height: 26px;
-  color: white; /* Ensure the icon color is visible */
   z-index: 10000; /* Set a high z-index to ensure visibility */
 }
 .ham-hide-btn {
@@ -279,8 +283,8 @@ nav a:hover {
 
 .hero-container {
   position: relative; /* Ensure the container is positioned relative for the pseudo-element */
-  height: 100vh; /* Ensure the container takes full height */
   width: 100%; /* Ensure the container takes full width */
+  height: 100vh; /* Ensure the container takes full height */
   overflow: hidden; /* Hide any overflow */
   background-image: linear-gradient(
       rgba(34, 34, 34, 0.9),
@@ -297,13 +301,30 @@ nav a:hover {
 footer {
   background-color: #00001b;
   color: #fff;
-  padding: 20px 0;
+  padding: 16px 20px;
   text-align: center;
   width: auto;
   margin: 0 auto;
-
   /* max-width: 1240px; */
   width: 100%;
+}
+footer::before,
+footer::after {
+  content: "";
+  display: block;
+  width: 80%; /* Line width */
+  margin: 0 auto; /* Center the lines */
+  height: 1px; /* Line thickness */
+  background-color: #d3a625; /* Line color */
+  opacity: 0.7; /* Minimalist effect */
+}
+
+footer::before {
+  margin-bottom: 16px; /* Spacing below the first line */
+}
+
+footer::after {
+  margin-top: 16px; /* Spacing above the second line */
 }
 .footer-links {
   font-weight: 700;
@@ -344,4 +365,9 @@ footer {
   letter-spacing: 1px;
   text-align: center;
   line-height: 1.6;
+}
+.footer-text a {
+  color: #641e1e;
+  text-decoration: none;
+  transition: color 0.3s;
 }
