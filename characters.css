@@ -56,7 +56,7 @@
   left: 50%;
   transform: translateX(-50%);
   color: var(--gold-color);
-  background-color: #29292984;
+  background-color: var(--yellow-color); /* Use the hex color directly */
   font-size: 1.1rem;
   font-weight: 900;
   border-radius: inherit;

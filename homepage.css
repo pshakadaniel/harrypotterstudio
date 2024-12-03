@@ -1,3 +1,14 @@
+:root {
+  --yellow-color: #d3a625;
+  --red-color: #641e1e;
+  --green-color: #078f2a;
+  --gold-color: #edc531;
+  --bg-color: #222;
+  --blinkingColor: white;
+  --h1Color: white;
+  --subtitleColor: grey;
+  --speed: 6s;
+}
 * {
   margin: 0;
   padding: 0;
@@ -299,7 +310,143 @@ button.ham-open-btn {
   background-size: cover;
   background-position: center; /* Center the background image */
 }
-.accordion {
+.hero-container h1 {
+  font-size: clamp(1rem, 3vw+1rem, 4rem);
+  position: relative;
+  width: max-content;
+  color: black;
+  margin: 0 auto;
+}
+.hero-container h1::before,
+.hero-container h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.hero-container h1::before {
+  background-color: var(--bg-color);
+  animation: typing var(--speed) steps(23) 1s forwards;
+}
+.hero-container h1::after {
+  width: 0.125em;
+  background: var(--blinkingColor);
+  animation: typing var(--speed) steps(23) 1s forwards,
+    blink 600ms steps(23) infinite;
+}
+
+.subtitle {
+  color: var(--subtitleColor);
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 2s calc(var(--speed) + 2s) ease forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--red-color);
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--yellow-color);
+}
+.house-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+.house {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.house img {
+  width: 64px;
+  height: 64px;
+}
+.house img:hover {
+  transform: scale(1.4);
+}
+.house a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.house p {
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #00001b;
+}
+.house p:hover {
+  color: var(--yellow-color);
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+@media (max-width: 768px) {
+  .house-container {
+    flex-direction: column;
+  }
+}
+/*accordion*/
+.accordion-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -307,9 +454,62 @@ button.ham-open-btn {
   gap: 20px;
   padding: 20px;
   width: 100%;
-  max-width: 1200px;
+
   margin: 0 auto;
+  background-color: var(--yellow-color);
 }
+.accordion button {
+  background-color: var(--red-color);
+  color: #000;
+  font-size: 14px;
+  font-weight: 900;
+  text-align: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.accordion button:hover {
+  background-color: var(--green-color);
+}
+.accordion-content {
+  max-height: 0; /* Initially hidden */
+  overflow: hidden; /* Prevent content overflow */
+  opacity: 0; /* Fully hidden */
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Smooth transitions */
+}
+
+.accordion-content p {
+  max-width: 1400px;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  padding: 10px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+/* Add cursor blinking effect */
+@keyframes typing {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 footer {
   background-color: #00001b;
   color: #fff;
