@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Harry Potter Studio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="homepage.css" />
     <link rel="stylesheet" href="characters.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,10 +15,6 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
       rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
   </head>
   <body>
@@ -106,56 +106,73 @@
         <li><a href="#places">Places</a></li>
       </ul>
     </aside>
-    <section class="hero-container">
-      <div class="char-container">
-        <!-- Slider main container -->
-        <div class="swiper">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-              <img src="assets/harrypotter.jpg" alt="harrypotter" />
-              <div class="title">
-                <span>Harry Potter</span>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/harrypotter.jpg" alt="harrypotter" />
-              <div class="title">
-                <span>Harry Potter</span>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/harrypotter.jpg" alt="harrypotter" />
-              <div class="title">
-                <span>Harry Potter</span>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/harrypotter.jpg" alt="harrypotter" />
-              <div class="title">
-                <span>Harry Potter</span>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/harrypotter.jpg" alt="harrypotter" />
-              <div class="title">
-                <span>Harry Potter</span>
-              </div>
-            </div>
+    <section class="characters">
+      <!-- Swiper Container -->
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <!-- Harry Potter -->
+          <div class="swiper-slide">
+            <img src="assets/harrypotter.jpg" alt="Harry Potter" />
+            <div class="character-title">Harry Potter</div>
           </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-
-          <!-- If we need scrollbar -->
-          <div class="swiper-scrollbar"></div>
+          <!-- Hermione Granger -->
+          <div class="swiper-slide">
+            <img src="assets/hermione.jpg" alt="Hermione Granger" />
+            <div class="character-title">Hermione Granger</div>
+          </div>
+          <!-- Ron Weasley -->
+          <div class="swiper-slide">
+            <img src="assets/ron.jpg" alt="Ron Weasley" />
+            <div class="character-title">Ron Weasley</div>
+          </div>
+          <!-- Severus Snape -->
+          <div class="swiper-slide">
+            <img src="assets/snape.jpg" alt="Severus Snape" />
+            <div class="character-title">Severus Snape</div>
+          </div>
+          <!-- Albus Dumbledore -->
+          <div class="swiper-slide">
+            <img src="assets/dumbledore.jpg" alt="Albus Dumbledore" />
+            <div class="character-title">Albus Dumbledore</div>
+          </div>
+          <!-- Voldemort -->
+          <div class="swiper-slide">
+            <img src="assets/voldemort.jpg" alt="Voldemort" />
+            <div class="character-title">Voldemort</div>
+          </div>
+          <!-- Draco Malfoy -->
+          <div class="swiper-slide">
+            <img src="assets/malfoy.jpg" alt="Draco Malfoy" />
+            <div class="character-title">Draco Malfoy</div>
+          </div>
+          <!-- Luna Lovegood -->
+          <div class="swiper-slide">
+            <img src="assets/luna.jpg" alt="Luna Lovegood" />
+            <div class="character-title">Luna Lovegood</div>
+          </div>
+          <!-- Rubeus Hagrid -->
+          <div class="swiper-slide">
+            <img src="assets/rubeus-hagrid.jpg" alt="Rubeus Hagrid" />
+            <div class="character-title">Rubeus Hagrid</div>
+          </div>
+          <!-- Minerva McGonagall -->
+          <div class="swiper-slide">
+            <img src="assets/mcgonagall.jpg" alt="Minerva McGonagall" />
+            <div class="character-title">Minerva McGonagall</div>
+          </div>
         </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="description">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam libero
+          sint, nemo non repellendus minus nesciunt beatae fugit deserunt
+          maiores a necessitatibus iusto similique nihil rem quibusdam odio
+          voluptas. Et?
+        </p>
       </div>
     </section>
+
     <footer>
       <div class="footer-flex">
         <div class="footer-links">
@@ -197,29 +214,7 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      const swiper = new Swiper(".swiper", {
-        // Optional parameters
-        direction: "horizontal",
-        loop: true,
 
-        // If we need pagination
-        pagination: {
-          el: ".swiper-pagination",
-        },
-
-        // Navigation arrows
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-
-        // And if we need scrollbar
-        scrollbar: {
-          el: ".swiper-scrollbar",
-        },
-      });
-    </script>
     <script src="script.js"></script>
   </body>
 </html>

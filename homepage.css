@@ -7,14 +7,14 @@
 body {
   font-family: "Sofia Sans", sans-serif;
   font-optical-sizing: auto;
-  color: brown;
-  height: 100vh; /* Ensure the body takes full height */
+  overflow-x: hidden; /* Prevent horizontal scrolling on small devices */
+  -webkit-font-smoothing: antialiased; /* Smoother font rendering on webkit browsers */
+  -moz-osx-font-smoothing: grayscale; /* Smoother font rendering on Firefox */
+  line-height: 1.6;
+  text-align: center;
 }
 /* Header Styles */
 .header {
-  margin: 0 auto;
-  height: auto;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column; /* Stack header-1 and nav-bar vertically */
   align-items: center; /* Center items horizontally */
@@ -28,8 +28,7 @@ body {
   justify-content: space-between; /* Space out logo and search-auth */
   align-items: center; /* Center items vertically */
   width: 100%;
-  height: 10vh;
-  padding: 20px 0;
+  margin: 24px 0;
 }
 /* Search and Auth Buttons */
 .search-auth {
@@ -259,6 +258,9 @@ button.ham-open-btn {
 
 /* Media Queries for Hamburger Menu */
 @media (min-width: 1000px) {
+  .header-1 {
+    padding: 0;
+  }
   .sidebar {
     display: none;
   }
@@ -297,7 +299,17 @@ button.ham-open-btn {
   background-size: cover;
   background-position: center; /* Center the background image */
 }
-
+.accordion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 footer {
   background-color: #00001b;
   color: #fff;
