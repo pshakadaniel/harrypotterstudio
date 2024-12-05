@@ -316,17 +316,17 @@ button.ham-open-btn {
   font-size: 3rem;
 }
 @media (max-width: 768px) {
-  .hero-container h1,
+  .hero-welcome-text h1,
   .input {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-top: 24px;
   }
 }
 @media (max-width: 375px) {
-  .hero-container h1,
+  .hero-welcome-text h1,
   .input {
-    font-size: 2rem;
-    margin-top: 24px;
+    font-size: 1.5rem;
+    margin-top: 32px;
   }
 }
 /* ---- particles.js container ---- */
