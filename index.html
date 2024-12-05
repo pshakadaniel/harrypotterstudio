@@ -101,16 +101,25 @@
         <li><a href="#places">Places</a></li>
       </ul>
     </aside>
+
     <section class="hero-container">
-      <h1 >Hi, Welcome to the Harry Potter Studio.</h1>
+      <div class="hero-welcome-text">
+        <h1>Are you from <span class="input"></span></h1>
+      </div>
+      <div id="particles-js"></div>
+      <!-- particles.js container -->
+      <div class="count-particles">
+        <span class="js-count-particles"></span>
+      </div>
+
       <div class="house-container">
-       <div class="house">
+        <div class="house">
           <a href="https://harrypotter.fandom.com/wiki/Gryffindor">
             <img src="assets/Gryffindor_ClearBG.webp" alt="Gryffindor" />
             <p>Gryffindor</p>
           </a>
-      </div>
-      <div class="house">
+        </div>
+        <div class="house">
           <a href="https://harrypotter.fandom.com/wiki/Hufflepuff?so=search">
             <img src="assets/Hufflepuff_ClearBG.webp" alt="Hufflepuff" />
             <p>Hufflepuff</p>
@@ -129,57 +138,6 @@
           </a>
         </div>
       </div>
-    </section>
-    <section class="accordion">
-      <div class="accordion-container">
-        <div class="accordion-item">
-          <button class="accordion-btn">What is Harry Potter?</button>
-          <div class="accordion-content">
-            <p>
-              Harry Potter is a series of seven fantasy novels written by
-              British author J. K. Rowling. The novels chronicle the lives of a
-              young wizard, Harry Potter, and his friends Hermione Granger and
-              Ron Weasley, all of whom are students at Hogwarts School of
-              Witchcraft and Wizardry. The main story arc concerns Harry's
-              struggle against Lord Voldemort, a dark wizard who intends to
-              become immortal, overthrow the wizard governing body known as the
-              Ministry of Magic and subjugate all wizards and Muggles (non-magic
-              people).
-            </p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-btn">Who is J.K. Rowling?</button>
-          <div class="accordion-content">
-            <p>
-              Joanne Rowling, better known by her pen name J. K. Rowling, is a
-              British author, philanthropist, film producer, television producer,
-              and screenwriter. She is best known for writing the Harry Potter
-              fantasy series, which has won multiple awards and sold more than
-              500 million copies, becoming the best-selling book series in
-              history. The books are the basis of a popular film series, over
-              which Rowling had overall approval on the scripts and was a
-              producer on the final films. She also writes crime novels under
-              the pen name Robert Galbraith.
-            </p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-btn">What is Hogwarts?</button>
-          <div class="accordion-content">
-            <p>
-              Hogwarts School of Witchcraft and Wizardry, commonly shortened to
-              Hogwarts, is a fictional British school of magic for students aged
-              eleven to eighteen, and is the primary setting for the first six
-              books in J.K. Rowling's Harry Potter series.
-            </p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-btn">What is the Wizarding World?</button>
-          <div class="accordion-content">
-            <p>
-              The Wizarding
     </section>
     <footer>
       <div class="footer-flex">
@@ -221,6 +179,11 @@
         </p>
       </div>
     </footer>
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- stats.js lib -->
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="script.js"></script>
   </body>
 </html>

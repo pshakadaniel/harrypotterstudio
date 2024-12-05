@@ -1,23 +1,22 @@
 :root {
-  --yellow-color: #d3a625;
-  --red-color: #641e1e;
-  --green-color: #078f2a;
+  --gryffindorYellow-color: #d3a625;
+  --gryffindorRed-color: #641e1e;
   --gold-color: #edc531;
+  --ravenclawBlue-color: #0e1a40;
+  --hufflepuffYellow-color: #ecb939;
 }
-
+*,
+element {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .characters {
   position: relative; /* Ensure the container is positioned relative for the pseudo-element */
   width: 100%; /* Ensure the container takes full width */
   height: 100vh; /* Ensure the container takes full height */
   overflow: hidden; /* Hide any overflow */
-  background-image: linear-gradient(
-      rgba(34, 34, 34, 0.9),
-      rgba(34, 34, 34, 0.55),
-      rgba(34, 34, 34, 0.6),
-      rgba(34, 34, 34, 0.7),
-      rgba(34, 34, 34, 0.9)
-    ),
-    url(assets/background.png);
+  background-image: url(assets/characterbg.webp);
   background-size: cover;
   background-position: center; /* Center the background image */
 }
@@ -39,14 +38,14 @@
   position: relative;
   overflow: hidden;
   border-radius: 15px;
-  box-shadow: 10px 15px 12px #575757;
 }
 
 .swiper-slide img {
+  margin-top: 24px;
   width: 100%;
-  height: 100%;
+  height: 240px; /* Set a fixed height */
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 12px; /* Set 12px for each corner */
   display: block; /* Prevent any extra inline spacing */
 }
 
@@ -55,19 +54,24 @@
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  color: var(--gold-color);
-  background-color: var(--yellow-color); /* Use the hex color directly */
-  font-size: 1.1rem;
+  color: #00001b;
+  background-color: rgba(
+    245,
+    222,
+    179,
+    0.16
+  ); /* Use rgba with lesser opacity */
+  font-size: 1rem;
   font-weight: 900;
   border-radius: inherit;
   padding: 0 10px;
 }
 
 /* Swiper Pagination */
-/* Ensure pagination is positioned below the Swiper container */
 .swiper-pagination {
   position: relative; /* Position pagination relative to its container */
   text-align: center; /* Center-align the bullets */
+  margin-top: 1rem;
   width: 100%; /* Match the width of the Swiper container */
   height: auto; /* Allow it to resize automatically */
 }
@@ -75,7 +79,7 @@
 .swiper-pagination-bullet {
   width: 8px; /* Make the bullet larger for better visibility */
   height: 8px; /* Equal width and height for circular bullets */
-  background: var(--red-color);
+  background: var(--gryffindorRed-color);
   border-radius: 50%; /* Make bullets fully circular */
   margin: 0 5px; /* Add spacing between bullets */
   transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover or active state */
@@ -83,6 +87,6 @@
 
 /* Adjust the bullet active */
 .swiper-pagination-bullet-active {
-  background: var(--red-color);
+  background: var(--gryffindorRed-color);
   transform: scale(1.5); /* Slightly enlarge the active bullet */
 }

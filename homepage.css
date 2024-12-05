@@ -1,18 +1,15 @@
 :root {
-  --yellow-color: #d3a625;
-  --red-color: #641e1e;
-  --green-color: #078f2a;
+  --gryffindorYellow-color: #d3a625;
+  --gryffindorRed-color: #641e1e;
   --gold-color: #edc531;
-  --bg-color: #222;
-  --blinkingColor: white;
-  --h1Color: white;
-  --subtitleColor: grey;
-  --speed: 6s;
+  --ravenclawBlue-color: #0e1a40;
+  --hufflepuffYellow-color: #ecb939;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 16px;
 }
 /* General Styles */
 body {
@@ -24,6 +21,7 @@ body {
   line-height: 1.6;
   text-align: center;
 }
+
 /* Header Styles */
 .header {
   display: flex;
@@ -223,13 +221,13 @@ nav a {
 }
 
 nav a:hover {
-  color: #d3a625; /* Hogwarts house colors or gold */
+  color: var(--gryffindorYellow-color); /* Hogwarts house colors or gold */
 }
 button.ham-open-btn {
   border: none; /* Remove border */
   background: none; /* Remove background color */
   box-shadow: none; /* Remove any shadow */
-  color: #641e1e; /* Set the color */
+  color: var(--gryffindorRed-color); /* Set the color */
   font: inherit; /* Use the font styles of the parent */
   cursor: pointer; /* Ensure it behaves like a button */
 }
@@ -299,94 +297,81 @@ button.ham-open-btn {
   width: 100%; /* Ensure the container takes full width */
   height: 100vh; /* Ensure the container takes full height */
   overflow: hidden; /* Hide any overflow */
-  background-image: linear-gradient(
-      rgba(34, 34, 34, 0.9),
-      rgba(34, 34, 34, 0.55),
-      rgba(34, 34, 34, 0.6),
-      rgba(34, 34, 34, 0.7),
-      rgba(34, 34, 34, 0.9)
-    ),
-    url(assets/background.png);
-  background-size: cover;
-  background-position: center; /* Center the background image */
-}
-.hero-container h1 {
-  font-size: clamp(1rem, 3vw+1rem, 4rem);
-  position: relative;
-  width: max-content;
-  color: black;
-  margin: 0 auto;
-}
-.hero-container h1::before,
-.hero-container h1::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-.hero-container h1::before {
-  background-color: var(--bg-color);
-  animation: typing var(--speed) steps(23) 1s forwards;
-}
-.hero-container h1::after {
-  width: 0.125em;
-  background: var(--blinkingColor);
-  animation: typing var(--speed) steps(23) 1s forwards,
-    blink 600ms steps(23) infinite;
-}
-
-.subtitle {
-  color: var(--subtitleColor);
-  font-size: 1rem;
-  font-weight: 400;
-  opacity: 0;
-  transform: translateY(3rem);
-  animation: fadeInUp 2s calc(var(--speed) + 2s) ease forwards;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: var(--red-color);
-  }
-}
-
-@keyframes blink {
-  to {
-    background: transparent;
-  }
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.hero-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; /* Center items horizontally */
   gap: 20px;
   padding: 20px;
-  width: 100%;
   margin: 0 auto;
-  background-color: var(--yellow-color);
+  z-index: 1; /* Ensure hero-container elements are above the particles */
+}
+.hero-welcome-text h1 {
+  font-size: 3rem;
+  color: var(--gryffindorRed-color);
+}
+
+.input {
+  color: var(--gold-color);
+  font-size: 3rem;
+}
+@media (max-width: 768px) {
+  .hero-container h1,
+  .input {
+    font-size: 2rem;
+    margin-top: 24px;
+  }
+}
+@media (max-width: 375px) {
+  .hero-container h1,
+  .input {
+    font-size: 2rem;
+    margin-top: 24px;
+  }
+}
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #00001b;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: -999; /* Ensure particles are behind the hero-container elements */
+} /* ---- stats.js ---- */
+.count-particles {
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13e8e9;
+  font-size: 0.8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+.js-count-particles {
+  font-size: 1.1em;
+}
+#stats,
+.count-particles {
+  -webkit-user-select: none;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+#stats {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+.count-particles {
+  border-radius: 0 0 3px 3px;
 }
 .house-container {
   display: flex;
@@ -435,7 +420,7 @@ button.ham-open-btn {
   color: #00001b;
 }
 .house p:hover {
-  color: var(--yellow-color);
+  color: var(--gryffindorRed-color);
   text-transform: uppercase;
   font-weight: 900;
 }
@@ -456,13 +441,13 @@ button.ham-open-btn {
   width: 100%;
 
   margin: 0 auto;
-  background-color: var(--yellow-color);
+  background-color: var(--ravenclawBlue-color);
 }
 .accordion button {
-  background-color: var(--red-color);
-  color: #000;
-  font-size: 14px;
-  font-weight: 900;
+  background-color: var(--gryffindorYellow-color);
+  color: var(--gryffindorRed-color);
+  font-size: 0.8rem;
+  font-weight: 800;
   text-align: center;
   padding: 10px 20px;
   border: none;
@@ -471,7 +456,7 @@ button.ham-open-btn {
   transition: background-color 0.3s;
 }
 .accordion button:hover {
-  background-color: var(--green-color);
+  background-color: var(--gold-color);
 }
 .accordion-content {
   max-height: 0; /* Initially hidden */
@@ -515,7 +500,6 @@ footer {
   color: #fff;
   padding: 16px 20px;
   text-align: center;
-  width: auto;
   margin: 0 auto;
   /* max-width: 1240px; */
   width: 100%;
@@ -527,7 +511,7 @@ footer::after {
   width: 80%; /* Line width */
   margin: 0 auto; /* Center the lines */
   height: 1px; /* Line thickness */
-  background-color: #d3a625; /* Line color */
+  background-color: var(--gryffindorYellow-color); /* Line color */
   opacity: 0.7; /* Minimalist effect */
 }
 
@@ -552,7 +536,7 @@ footer::after {
   transition: color 0.3s;
 }
 .footer-links a:hover {
-  color: #d3a625; /* Hogwarts house colors or gold */
+  color: var(--gryffindorYellow-color); /* Hogwarts house colors or gold */
 }
 
 .footer-logo-container {
@@ -579,7 +563,7 @@ footer::after {
   line-height: 1.6;
 }
 .footer-text a {
-  color: #641e1e;
+  color: var(--gryffindorRed-color);
   text-decoration: none;
   transition: color 0.3s;
 }
