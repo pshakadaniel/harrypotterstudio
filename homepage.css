@@ -306,14 +306,23 @@ button.ham-open-btn {
   margin: 0 auto;
   z-index: 1; /* Ensure hero-container elements are above the particles */
 }
+.typed-cursor {
+  font-size: 2rem; /* Adjust cursor size (matches text size) */
+  line-height: 1; /* Ensure alignment with text */
+  color: #ecb93955; /* Adjust cursor color */
+  animation: blink 0.7s infinite; /* Customize blinking effect */
+}
 .hero-welcome-text h1 {
-  font-size: 3rem;
+  font-size: 2rem;
+  font-weight: 800;
   color: var(--gryffindorRed-color);
 }
 
 .input {
-  color: var(--gold-color);
-  font-size: 3rem;
+  color: #0e1a40;
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 @media (max-width: 768px) {
   .hero-welcome-text h1,
@@ -476,24 +485,6 @@ button.ham-open-btn {
 }
 
 /* Add cursor blinking effect */
-@keyframes typing {
-  to {
-    left: 100%;
-  }
-}
-
-@keyframes blink {
-  to {
-    background: transparent;
-  }
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 footer {
   background-color: #00001b;

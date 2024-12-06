@@ -95,20 +95,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 //typing effect
-document.addEventListener("DOMContentLoaded", function () {
-  var typed = new Typed(".input", {
-    strings: ["Gryffindor ?", "Hufflepuff ?", "Ravenclaw ?", "Slytherin ?"],
-    typeSpeed: 100,
-    backSpeed: 100,
-    loop: true,
-  });
+
+var typed = new Typed(".input", {
+  strings: ["Gryffindor ?", "Hufflepuff ?", "Ravenclaw ?", "Slytherin ?"],
+  typeSpeed: 92,
+  backSpeed: 82,
+  loop: true,
 });
 
 //particles js
 
 particlesJS("particles-js", {
   particles: {
-    number: { value: 200, density: { enable: true, value_area: 800 } },
+    number: { value: 250, density: { enable: true, value_area: 1000 } },
     color: { value: "#641e1e" },
     shape: {
       type: "circle",
