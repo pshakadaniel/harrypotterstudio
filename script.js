@@ -3,32 +3,44 @@ function toggleSB() {
   sidebar.classList.toggle("show");
 }
 
-//swiper JS;
+function headerScroll() {
+  const header = document.querySelector(".header");
+  if (window.scrollY > 0) {
+    header.classList.add("header-scroll");
+  } else {
+    header.classList.remove("header-scroll");
+  }
+}
 
+window.addEventListener("scroll", headerScroll);
+
+// Ensure Swiper is defined before using it
 document.addEventListener("DOMContentLoaded", () => {
-  const swiper = new Swiper(".swiper", {
-    slidesPerView: "auto",
-    spaceBetween: 20,
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-    breakpoints: {
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 20,
+  if (typeof Swiper !== "undefined") {
+    const swiper = new Swiper(".swiper", {
+      slidesPerView: "auto",
+      spaceBetween: 20,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets",
+        clickable: true,
       },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 15,
+      breakpoints: {
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        480: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
       },
-      480: {
-        slidesPerView: 1,
-        spaceBetween: 10,
-      },
-    },
-  });
+    });
+  }
 });
 //accordion
 document.addEventListener("DOMContentLoaded", () => {
@@ -128,7 +140,7 @@ particlesJS("particles-js", {
     line_linked: {
       enable: true,
       distance: 150,
-      color: "#ade8f4",
+      color: "#caf0f8",
       opacity: 0.7,
       width: 0.7,
     },
@@ -160,20 +172,27 @@ particlesJS("particles-js", {
   },
   retina_detect: true,
 });
-var count_particles, stats, update;
-stats = new Stats();
-stats.setMode(0);
-stats.domElement.style.position = "absolute";
-stats.domElement.style.left = "0px";
-stats.domElement.style.top = "0px";
-document.body.appendChild(stats.domElement);
-count_particles = document.querySelector(".js-count-particles");
-update = function () {
-  stats.begin();
-  stats.end();
-  if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-  }
+
+// Ensure Stats is defined before using it
+if (typeof Stats !== "undefined") {
+  var count_particles, stats, update;
+  stats = new Stats();
+  stats.setMode(0);
+  stats.domElement.style.position = "absolute";
+  stats.domElement.style.left = "0px";
+  stats.domElement.style.top = "0px";
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector(".js-count-particles");
+  update = function () {
+    stats.begin();
+    stats.end();
+    if (
+      window.pJSDom[0].pJS.particles &&
+      window.pJSDom[0].pJS.particles.array
+    ) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
   requestAnimationFrame(update);
-};
-requestAnimationFrame(update);
+}
