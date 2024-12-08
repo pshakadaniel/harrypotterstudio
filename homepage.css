@@ -283,12 +283,14 @@ button.ham-open-btn {
 .typed-cursor {
   font-size: 2rem;
   line-height: 1;
-  color: #ecb93955;
+  color: rgba(255, 255, 255, 0.519);
   animation: blink 0.7s infinite;
 }
 .hero-welcome-text h1 {
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--gryffindorred-color);
 }
 .input {
   color: #ecb939;
@@ -404,44 +406,6 @@ button.ham-open-btn {
   .house-container {
     flex-direction: column;
   }
-}
-.accordion-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  width: 100%;
-  margin: 0 auto;
-}
-.accordion button {
-  font-size: 0.8rem;
-  font-weight: 800;
-  text-align: center;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.accordion button:hover {
-  background-color: #edc531;
-}
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-}
-.accordion-content p {
-  max-width: 1400px;
-  font-size: 14px;
-  font-weight: 700;
-  margin: 0;
-  padding: 10px;
-  line-height: 1.5;
-  word-break: break-word;
 }
 .footer-container {
   background-color: #00001b;
