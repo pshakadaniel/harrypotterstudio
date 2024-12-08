@@ -107,34 +107,34 @@ var typed = new Typed(".input", {
 
 particlesJS("particles-js", {
   particles: {
-    number: { value: 250, density: { enable: true, value_area: 1000 } },
+    number: { value: 120, density: { enable: true, value_area: 999 } },
     color: { value: "#641e1e" },
     shape: {
-      type: "circle",
+      type: "polygon",
       stroke: { width: 0, color: "#641e1e" },
-      polygon: { nb_sides: 6 },
+      polygon: { nb_sides: 5 },
       image: { src: "img/github.svg", width: 100, height: 100 },
     },
     opacity: {
-      value: 0.5,
+      value: 0.1,
       random: true,
       anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false },
     },
     size: {
-      value: 3,
+      value: 1,
       random: true,
       anim: { enable: false, speed: 90, size_min: 0.1, sync: false },
     },
     line_linked: {
       enable: true,
       distance: 150,
-      color: "#d3a625",
-      opacity: 0.4,
-      width: 1,
+      color: "#ade8f4",
+      opacity: 0.7,
+      width: 0.7,
     },
     move: {
       enable: true,
-      speed: 12,
+      speed: 7,
       direction: "none",
       random: false,
       straight: false,
@@ -153,7 +153,7 @@ particlesJS("particles-js", {
     modes: {
       grab: { distance: 400, line_linked: { opacity: 1 } },
       bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
-      repulse: { distance: 200, duration: 9 },
+      repulse: { distance: 200, duration: 5 },
       push: { particles_nb: 4 },
       remove: { particles_nb: 2 },
     },
