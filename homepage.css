@@ -486,17 +486,34 @@ button.ham-open-btn {
 
 /* Add cursor blinking effect */
 
-footer {
+.footer-container {
   background-color: #00001b;
   color: #fff;
-  padding: 16px 20px;
-  text-align: center;
-  margin: 0 auto;
-  /* max-width: 1240px; */
-  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
 }
-footer::before,
-footer::after {
+.footer-end {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer-top,
+.footer-end {
+  width: 80%; /* Ensure both sections take full width */
+  max-width: 1200px; /* Set a maximum width for both sections */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 0;
+  letter-spacing: 0.2px;
+}
+
+.footer-container::before,
+.footer-container::after {
   content: "";
   display: block;
   width: 80%; /* Line width */
@@ -505,13 +522,18 @@ footer::after {
   background-color: var(--gryffindorYellow-color); /* Line color */
   opacity: 0.7; /* Minimalist effect */
 }
-
-footer::before {
-  margin-bottom: 16px; /* Spacing below the first line */
+.footer-divider {
+  margin: 0 auto;
 }
 
-footer::after {
+.footer-container::before {
+  margin-bottom: 16px; /* Spacing below the first line */
+  margin-top: 16px;
+}
+
+.footer-container::after {
   margin-top: 16px; /* Spacing above the second line */
+  margin-bottom: 16px;
 }
 .footer-links {
   font-weight: 700;
@@ -540,21 +562,6 @@ footer::after {
 .footer-logo img {
   width: 100px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
-}
-.footer-flex {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 20px 0;
-  letter-spacing: 0.2px;
-}
-.footer-end {
-  width: 61%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-direction: column; /* Default to column layout */
 }
 
 .footer-text {
@@ -617,12 +624,8 @@ footer::after {
 }
 
 @media (max-width: 768px) {
-  .footer-flex {
-    flex-direction: column;
-    gap: 20px;
-  }
+  .footer-top,
   .footer-end {
-    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
