@@ -1,0 +1,27 @@
+:root {
+  --gryffindoryellow-color: #d3a625;
+  --gryffindorred-color: #641e1e;
+  --gold-color: #edc531;
+  --ravenclawblue-color: #0e1a40;
+  --hufflepuffyellow-color: #ecb939;
+}
+
+#accordion {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  background-color: var(--gryffindorred-color);
+}
+
+#accordion li {
+  border-bottom: 1px solid var(--gryffindoryellow-color);
+}
+a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: var(--gold-color);
+  font-size: 1.2em;
+  font-weight: bold;
+}

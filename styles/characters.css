@@ -11,17 +11,14 @@ element {
   padding: 0;
   box-sizing: border-box;
 }
-.characters {
+#characters {
   position: relative; /* Ensure the container is positioned relative for the pseudo-element */
+  padding: 40px 0;
   width: 100%; /* Ensure the container takes full width */
   height: 100vh; /* Ensure the container takes full height */
   overflow: hidden; /* Hide any overflow */
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.549),
-      rgba(0, 0, 0, 0.725),
-      rgba(0, 0, 0, 0.878)
-    ),
-    url(assets/background.png);
+  background: linear-gradient(rgba(0, 0, 0, 0.549), rgba(0, 0, 0, 0.811)),
+    url(/assets/background.png);
   background-size: cover;
   background-position: center; /* Center the background image */
 }
@@ -94,4 +91,13 @@ element {
 .swiper-pagination-bullet-active {
   background: var(--gryffindorRed-color);
   transform: scale(1.5); /* Slightly enlarge the active bullet */
+}
+
+.description {
+  text-transform: uppercase;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+  color: var(--gryffindorRed-color);
+  font-weight: 900;
 }
