@@ -1,8 +1,24 @@
+// sidebar toggle
 function toggleSB() {
   const sidebar = document.querySelector(".sidebar");
   sidebar.classList.toggle("show");
 }
 
+// close sidebar when clicking outside
+document.addEventListener("click", (event) => {
+  const sidebar = document.querySelector(".sidebar");
+  const toggleButton = document.querySelector(".ham-open-btn");
+  if (
+    sidebar.classList.contains("show") &&
+    !sidebar.contains(event.target) &&
+    event.target !== toggleButton &&
+    !toggleButton.contains(event.target)
+  ) {
+    sidebar.classList.remove("show");
+  }
+});
+
+//header-scroll effect
 function headerScroll() {
   const header = document.querySelector(".header");
   if (window.scrollY > 0) {
@@ -50,7 +66,6 @@ document.querySelectorAll(".faq-question").forEach((question) => {
     faq.classList.toggle("active");
   });
 });
-
 //typing effect
 
 var typed = new Typed(".input", {

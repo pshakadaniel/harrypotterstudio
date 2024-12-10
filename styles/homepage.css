@@ -46,10 +46,10 @@ body {
   top: 0;
   z-index: 9999;
   transition: all 0.3s ease;
-  background-color: #03045e;
+  background-color: #00001b;
 }
 .header-scroll {
-  background-color: #00001b;
+  background-color: #001233;
 }
 .header-1 {
   display: flex;
@@ -346,7 +346,7 @@ button.ham-open-btn {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #03045e;
+  background-color: #00001b;
   background-image: url("");
   background-repeat: no-repeat;
   background-size: cover;
@@ -487,6 +487,12 @@ button.ham-open-btn {
   line-height: 1.6;
   text-align: left;
 }
+/* 
+.faq-question:hover {
+  background-color: var(--gryffindorred-color);
+  cursor: pointer;
+} */
+
 .faq-answer {
   max-height: 0;
   overflow: hidden;
@@ -620,11 +626,16 @@ button.ham-open-btn {
 .footer-trademark {
   text-transform: uppercase;
 }
+.developer-detail {
+  font-style: italic;
+  font-weight: 300;
+}
 .footer-text a {
   text-decoration: none;
   transition: color 0.3s;
   font-weight: 900;
-  color: var(--gryffindorred-color);
+  font-size: 1.2rem;
+  color: #0077b5;
 }
 
 .footer-text a:hover {
