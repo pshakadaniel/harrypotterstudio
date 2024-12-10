@@ -42,70 +42,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-//accordion
-document.addEventListener("DOMContentLoaded", () => {
-  const accordionButtons = document.querySelectorAll(".accordion-btn"); // Get all accordion buttons
-  let activeTimeouts = {}; // Object to store timeouts for each accordion
 
-  accordionButtons.forEach((btn, index) => {
-    btn.addEventListener("click", () => {
-      // Get the associated accordion content
-      const content = btn.nextElementSibling; // This is the `.accordion-content`
-      const textElement = content.querySelector("p"); // Get the `<p>` inside the content
-
-      // Check if the current accordion is open
-      const isOpen = content.style.maxHeight;
-
-      // Close all other accordions and reset their text
-      document.querySelectorAll(".accordion-content").forEach((item, i) => {
-        if (i !== index) {
-          item.style.maxHeight = null; // Close the accordion
-          item.style.opacity = 0; // Hide the content
-          const resetTextElement = item.querySelector("p");
-          if (resetTextElement) {
-            resetTextElement.textContent = ""; // Clear text for closed accordions
-          }
-          clearTimeout(activeTimeouts[i]); // Stop active typing timeout for other accordions
-          activeTimeouts[i] = null; // Reset timeout
-        }
-      });
-
-      if (isOpen) {
-        // If already open, close it and clear text
-        content.style.maxHeight = null;
-        content.style.opacity = 0;
-        clearTimeout(activeTimeouts[index]); // Stop typing animation
-        textElement.textContent = ""; // Clear the text
-        activeTimeouts[index] = null; // Reset timeout for this accordion
-      } else {
-        // Otherwise, open the accordion and start typing animation
-        content.style.maxHeight = content.scrollHeight + "px"; // Open the accordion
-        content.style.opacity = 1; // Make content visible
-
-        // Store original text for typing animation
-        const textToType =
-          textElement.getAttribute("data-text") || textElement.textContent;
-        textElement.setAttribute("data-text", textToType); // Save the original text
-        textElement.textContent = ""; // Clear text for typing animation
-
-        let charIndex = 0;
-        const typingSpeed = 50; // Typing speed in milliseconds
-
-        function typeText() {
-          if (charIndex < textToType.length) {
-            textElement.textContent += textToType.charAt(charIndex); // Append next character
-            charIndex++;
-            const timeout = setTimeout(typeText, typingSpeed); // Schedule next character
-            activeTimeouts[index] = timeout; // Store timeout for this accordion
-            content.style.maxHeight = content.scrollHeight + "px"; // Adjust height dynamically
-          }
-        }
-
-        typeText(); // Start typing
-      }
-    });
+//faq
+document.querySelectorAll(".faq-question").forEach((question) => {
+  question.addEventListener("click", () => {
+    const faq = question.parentElement;
+    faq.classList.toggle("active");
   });
 });
+
 //typing effect
 
 var typed = new Typed(".input", {

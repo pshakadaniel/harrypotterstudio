@@ -80,15 +80,10 @@ body {
   font-size: 14px;
   outline: none;
 }
-.search-bar button {
-  background: none;
-  border: none;
+.search-logo {
+  width: 32px;
+  height: 32px;
   cursor: pointer;
-}
-.search-bar button img {
-  width: 16px;
-  height: 16px;
-  filter: brightness(0) invert(1);
 }
 .header-logo {
   display: block;
@@ -388,6 +383,8 @@ button.ham-open-btn {
 .count-particles {
   border-radius: 0 0 3px 3px;
 }
+
+/* Houser container CSS */
 .house-container {
   display: flex;
   justify-content: center;
@@ -446,6 +443,101 @@ button.ham-open-btn {
     height: 42px;
   }
 }
+/* Accordion CSS */
+#accordion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  background: linear-gradient(
+    to right,
+    var(--gryffindoryellow-color),
+    var(--ravenclawblue-color)
+  ); /* Gradient colors */
+  gap: 20px;
+  margin: 0 auto;
+}
+#accordion h1 {
+  font-size: 1.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: black;
+}
+.faq {
+  width: 50vw;
+  border-bottom: 1px solid #00001b;
+}
+.faq-icon {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.3s ease-in;
+}
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.faq-question h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: left;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  user-select: none;
+  transition: max-height 0.3s ease-in;
+}
+.faq-answer p {
+  padding: 10px 0px;
+  line-height: 1.4;
+  letter-spacing: 0.7px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.faq.active .faq-answer {
+  max-height: 300px;
+}
+.faq.active .faq-icon {
+  transform: rotate(180deg); /* Rotate the arrow up */
+}
+
+@media screen and (max-width: 768px) {
+  .faq {
+    width: 80vw;
+  }
+  .faq-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+  .faq-question h3 {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 414px) {
+  .faq {
+    width: 90vw;
+  }
+  .faq-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+  .faq-question h3 {
+    font-size: 1rem;
+    text-align: left;
+  }
+}
+/* Footer CSS */
 .footer-container {
   background-color: #00001b;
   color: #fff;
