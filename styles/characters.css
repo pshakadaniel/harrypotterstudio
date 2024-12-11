@@ -4,6 +4,7 @@
   --gold-color: #edc531;
   --ravenclawBlue-color: #0e1a40;
   --hufflepuffYellow-color: #ecb939;
+  --slytherinGreen-color: #1a472a;
 }
 *,
 element {
@@ -11,16 +12,30 @@ element {
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Gradient Background CSS */
+.gradient-bg {
+  background-size: 200% 200%;
+  animation: waveMotion 15s ease infinite;
+}
+
+@keyframes waveMotion {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 #characters {
   position: relative; /* Ensure the container is positioned relative for the pseudo-element */
   padding: 40px 0;
   width: 100%; /* Ensure the container takes full width */
   height: 100vh; /* Ensure the container takes full height */
   overflow: hidden; /* Hide any overflow */
-  background: linear-gradient(rgba(0, 0, 0, 0.549), rgba(0, 0, 0, 0.811)),
-    url(/assets/background.png);
-  background-size: cover;
-  background-position: center; /* Center the background image */
 }
 /* Swiper Container */
 .swiper {

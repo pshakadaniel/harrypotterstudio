@@ -4,6 +4,7 @@
   --gold-color: #edc531;
   --ravenclawblue-color: #0e1a40;
   --hufflepuffyellow-color: #ecb939;
+  --slytherinGreen-color: #1a472a;
 }
 * {
   margin: 0;
@@ -214,9 +215,16 @@ nav ul {
 }
 nav a {
   text-decoration: none;
-  color: wheat;
+  color: var(--gryffindorred-color);
   font-size: 16px;
   transition: color 0.3s;
+  font-weight: 700;
+}
+nav a:hover {
+  color: var(--gold-color);
+}
+nav a:active {
+  color: black;
 }
 button.ham-open-btn {
   border: none;
@@ -311,7 +319,7 @@ button.ham-open-btn {
   color: var(--gryffindorred-color);
 }
 .input {
-  color: #ecb939;
+  color: wheat;
   font-size: 2rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -515,6 +523,24 @@ button.ham-open-btn {
   transform: rotate(135deg);
 }
 
+/* Gradient Background CSS */
+.faq-gradient-bg {
+  background-size: 200% 200%;
+  animation: waveMotion 15s ease infinite;
+}
+
+@keyframes waveMotion {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .faq {
     width: 80vw;
@@ -662,6 +688,7 @@ button.ham-open-btn {
 .footer-social a:active {
   color: var(--gryffindorred-color);
 }
+
 @media (min-width: 768px) {
   .footer-end {
     flex-direction: row;
