@@ -472,7 +472,7 @@ button.ham-open-btn {
   height: 18px;
   cursor: pointer;
   flex-shrink: 0;
-  transition: transform 0.3s ease-in;
+  transition: transform 0.4s ease-out;
 }
 .faq-question {
   display: flex;
@@ -486,13 +486,9 @@ button.ham-open-btn {
   font-weight: 700;
   line-height: 1.6;
   text-align: left;
+  display: flex;
+  align-items: flex-start;
 }
-/* 
-.faq-question:hover {
-  background-color: var(--gryffindorred-color);
-  cursor: pointer;
-} */
-
 .faq-answer {
   max-height: 0;
   overflow: hidden;
@@ -512,9 +508,11 @@ button.ham-open-btn {
   max-height: 300px;
 }
 .faq.active .faq-icon {
-  transform: rotate(180deg); /* Rotate the arrow up */
+  transform: rotate(135deg);
 }
-
+.faq-question:hover .faq-icon {
+  transform: rotate(135deg);
+}
 @media screen and (max-width: 768px) {
   .faq {
     width: 80vw;
@@ -695,5 +693,35 @@ button.ham-open-btn {
   }
   .footer-text {
     text-align: center;
+  }
+}
+
+/* Preloader CSS */
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: #00001b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#preloader .spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid var(--gold-color);
+  width: 40px;
+  height: 40px;
+  animation: spin s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
