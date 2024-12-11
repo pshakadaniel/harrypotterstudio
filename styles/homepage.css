@@ -319,7 +319,7 @@ button.ham-open-btn {
   color: var(--gryffindorred-color);
 }
 .input {
-  color: wheat;
+  color: rgba(245, 222, 179, 0.729);
   font-size: 2rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -436,7 +436,7 @@ button.ham-open-btn {
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s;
-  color: #00001b;
+  color: rgba(245, 222, 179, 0.636);
 }
 .house p:hover {
   text-transform: uppercase;
