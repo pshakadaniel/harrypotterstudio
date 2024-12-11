@@ -507,12 +507,14 @@ button.ham-open-btn {
 .faq.active .faq-answer {
   max-height: 300px;
 }
-.faq.active .faq-icon {
-  transform: rotate(135deg);
-}
 .faq-question:hover .faq-icon {
   transform: rotate(135deg);
 }
+
+.faq.active .faq-icon {
+  transform: rotate(135deg);
+}
+
 @media screen and (max-width: 768px) {
   .faq {
     width: 80vw;
