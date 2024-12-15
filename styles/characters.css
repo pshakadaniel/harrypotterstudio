@@ -5,6 +5,8 @@
   --ravenclawBlue-color: #0e1a40;
   --hufflepuffYellow-color: #ecb939;
   --slytherinGreen-color: #1a472a;
+  --dark-bg-color: #00001b;
+  --yellowWhite-color: wheat;
 }
 *,
 element {
@@ -71,7 +73,7 @@ element {
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  color: #00001b;
+  color: var(--dark-bg-color);
   background-color: rgba(
     245,
     222,

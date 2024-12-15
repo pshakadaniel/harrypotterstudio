@@ -1,3 +1,29 @@
+//theme-toggle
+// Select the toggle button and body element
+const toggleButton = document.getElementById("theme-toggle");
+const body = document.body;
+
+// Check for saved theme in localStorage
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+  body.classList.add(savedTheme); // Apply the saved theme
+}
+
+// Add event listener for theme toggle
+toggleButton.addEventListener("click", () => {
+  // Toggle the 'light-mode' class
+  body.classList.toggle("light-mode");
+
+  // Save the user's theme preference
+  if (body.classList.contains("light-mode")) {
+    localStorage.setItem("theme", "light-mode");
+    toggleButton.textContent = "Nox"; // Change button text to "Nox"
+  } else {
+    localStorage.setItem("theme", "");
+    toggleButton.textContent = "Lumos"; // Change button text to "Lumos"
+  }
+});
+
 // sidebar toggle
 function toggleSB() {
   const sidebar = document.querySelector(".sidebar");
@@ -69,8 +95,8 @@ document.querySelectorAll(".faq-question").forEach((question) => {
 //typing effect
 
 var typed = new Typed(".input", {
-  strings: ["Gryffindor ?", "Hufflepuff ?", "Ravenclaw ?", "Slytherin ?"],
-  typeSpeed: 92,
+  strings: [" Welcome to Platform 9¾", "Wizards", "Magic Awaits!"],
+  typeSpeed: 82,
   backSpeed: 82,
   loop: true,
 });
@@ -79,8 +105,8 @@ var typed = new Typed(".input", {
 
 particlesJS("particles-js", {
   particles: {
-    number: { value: 150, density: { enable: true, value_area: 999 } },
-    color: { value: "#641e1e" },
+    number: { value: 110, density: { enable: true, value_area: 999 } },
+    color: { value: "#00001b" },
     shape: {
       type: "circle",
       stroke: { width: 0, color: "#641e1e" },
@@ -99,20 +125,20 @@ particlesJS("particles-js", {
     },
     line_linked: {
       enable: true,
-      distance: 120,
-      color: "#caf0f8",
-      opacity: 0.7,
-      width: 0.7,
+      distance: 90,
+      color: "#7bdff2",
+      opacity: 2,
+      width: 0.9,
     },
     move: {
       enable: true,
-      speed: 5,
+      speed: 7,
       direction: "none",
       random: false,
       straight: false,
       out_mode: "out",
       bounce: false,
-      attract: { enable: true, rotateX: 600, rotateY: 1200 },
+      attract: { enable: true, rotateX: 1200, rotateY: 1200 },
     },
   },
   interactivity: {

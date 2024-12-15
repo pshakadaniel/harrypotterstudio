@@ -5,6 +5,23 @@
   --ravenclawblue-color: #0e1a40;
   --hufflepuffyellow-color: #ecb939;
   --slytherinGreen-color: #1a472a;
+  --dark-bg-color: #00001b;
+  --yellowWhite-color: wheat;
+  --background-color: var(--dark-bg-color);
+  --text-color: var(--yellowWhite-color);
+  --accent-color: var(--gryffindoryellow-color);
+  --header-scroll-color: #00002b;
+  --accordion-bg-color: var(--ravenclawblue-color);
+  --footer-text-color: #fff;
+  --welcome-text-color: var(--slytherinGreen-color);
+}
+/* Light Mode (Slytherin Green Theme) */
+body.light-mode {
+  --background-color: var(--slytherinGreen-color);
+  --text-color: black;
+  --header-scroll-color: var(--ravenclawblue-color);
+  --footer-text-color: #000;
+  --welcome-text-color: var(--dark-bg-color);
 }
 * {
   margin: 0;
@@ -39,6 +56,36 @@ body {
     scroll-margin-top: 60px;
   }
 }
+#theme-toggle {
+  padding: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-weight: 700;
+  color: wheat;
+}
+#theme-toggle:hover {
+  color: var(--gold-color);
+}
+
+@media screen and (max-width: 768px) {
+  #theme-toggle {
+    position: absolute;
+    right: 0;
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  #theme-toggle {
+    position: absolute;
+    right: 0;
+    font-size: 0.7rem;
+  }
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -46,14 +93,14 @@ body {
   width: 100%;
   transition: background-color 0.3s ease-in;
   padding: 0 20px;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 9999;
   transition: all 0.3s ease;
-  background-color: #00001b;
+  background-color: transparent;
 }
 .header-scroll {
-  background-color: #001233;
+  background-color: var(--header-scroll-color);
 }
 .header-1 {
   display: flex;
@@ -72,7 +119,6 @@ body {
 .search-bar {
   display: flex;
   align-items: center;
-  background-color: #1c1d2c;
   border-radius: 20px;
   padding: 5px 15px;
 }
@@ -88,6 +134,7 @@ body {
   width: 32px;
   height: 32px;
   cursor: pointer;
+  fill: rgba(245, 222, 179, 0.701);
 }
 .header-logo {
   display: block;
@@ -129,7 +176,6 @@ body {
   padding: 8px 20px;
   font-size: 14px;
   font-weight: bold;
-  text-transform: uppercase;
   border: transparent solid 2px;
   border-radius: 20px;
   cursor: pointer;
@@ -137,21 +183,22 @@ body {
   margin: 0;
 }
 .login-btn {
-  background-color: #0b0c1e;
-  color: #fff;
-  border: #fff solid 2px;
+  background-color: transparent;
+  color: var(--gryffindorred-color);
+  border: solid 2px;
 }
 .login-btn:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: transparent;
+  color: var(--gold-color);
 }
 .signup-btn {
   border: solid 2px;
-  background-color: #5758ff;
-  color: #fff;
+  background-color: var(--gryffindorred-color);
+  color: var(--gryffindoryellow-color);
 }
 .signup-btn:hover {
-  background-color: #0b163b;
+  background-color: var(--slytherinGreen-color);
+  color: #fff;
 }
 .header-1 {
   padding: 20px 0;
@@ -218,13 +265,13 @@ nav ul {
 }
 nav a {
   text-decoration: none;
-  color: var(--gryffindorred-color);
+  color: wheat;
   font-size: 16px;
   transition: color 0.3s;
   font-weight: 700;
 }
 nav a:hover {
-  color: var(--gold-color);
+  color: var(--ravenclawblue-color);
 }
 nav a:active {
   color: black;
@@ -307,25 +354,14 @@ button.ham-open-btn {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
   padding: 20px;
   margin: 0 auto;
   z-index: 1;
 }
-.hero-welcome-text {
-  margin-top: 50px;
-}
-.hero-welcome-text h1 {
-  font-size: 2rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: var(--gryffindorred-color);
-}
 .input {
-  color: rgba(245, 222, 179, 0.729);
+  color: var(--welcome-text-color);
   font-size: 2rem;
   font-weight: 900;
-  text-transform: uppercase;
 }
 
 .typed-cursor {
@@ -342,6 +378,9 @@ button.ham-open-btn {
 }
 
 @media (max-width: 414px) {
+  .hero-welcome-text {
+    margin-top: 3.5rem;
+  }
   .hero-welcome-text h1,
   .input {
     font-size: 1.1rem;
@@ -352,12 +391,15 @@ button.ham-open-btn {
   .input {
     font-size: 1rem;
   }
+  .hero-welcome-text {
+    margin-top: 3.5rem;
+  }
 }
 #particles-js {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #00001b;
+  background-color: var(--background-color);
   background-image: url("");
   background-repeat: no-repeat;
   background-size: cover;
@@ -460,7 +502,7 @@ button.ham-open-btn {
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
-  background: var(--ravenclawblue-color);
+  background: var(--accordion-bg-color);
 }
 #accordion h1 {
   font-size: 2rem;
@@ -577,8 +619,8 @@ button.ham-open-btn {
 }
 /* Footer CSS */
 .footer-container {
-  background-color: #00001b;
-  color: #fff;
+  background-color: var(--background-color);
+  color: var(--footer-text-color);
   padding-left: 50px;
   padding-right: 50px;
   display: flex;
@@ -629,7 +671,7 @@ button.ham-open-btn {
 }
 .footer-links a {
   text-decoration: none;
-  color: #fff;
+  color: var(--footer-text-color);
   font-weight: 400;
   transition: color 0.3s;
 }
@@ -649,7 +691,7 @@ button.ham-open-btn {
   height: auto;
 }
 .footer-text {
-  font-weight: 100;
+  font-weight: 400;
   letter-spacing: 1px;
   text-align: left;
   line-height: 1.6;
@@ -660,7 +702,7 @@ button.ham-open-btn {
 }
 .developer-detail {
   font-style: italic;
-  font-weight: 300;
+  font-weight: 900;
 }
 .footer-text a {
   text-decoration: none;
