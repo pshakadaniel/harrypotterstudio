@@ -17,10 +17,10 @@ toggleButton.addEventListener("click", () => {
   // Save the user's theme preference
   if (body.classList.contains("light-mode")) {
     localStorage.setItem("theme", "light-mode");
-    toggleButton.textContent = "Nox"; // Change button text to "Nox"
+    toggleButton.textContent = "/* Nox"; // Change button text to "Nox"
   } else {
     localStorage.setItem("theme", "");
-    toggleButton.textContent = "Lumos"; // Change button text to "Lumos"
+    toggleButton.textContent = "/* Lumos"; // Change button text to "Lumos"
   }
 });
 
