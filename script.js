@@ -146,14 +146,14 @@ particlesJS("particles-js", {
   interactivity: {
     detect_on: "canvas",
     events: {
-      onhover: { enable: true, mode: "grab" },
-      onclick: { enable: true, mode: "repulse" },
+      onhover: { enable: true, mode: "repulse" },
+      onclick: { enable: true, mode: "push" },
       resize: true,
     },
     modes: {
-      grab: { distance: 300, line_linked: { opacity: 7 } },
+      grab: { distance: 300, line_linked: { opacity: 2 } },
       bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
-      repulse: { distance: 700, duration: 0.7 },
+      repulse: { distance: 320, duration: 0.3 },
       push: { particles_nb: 20 },
       remove: { particles_nb: 200 },
     },
