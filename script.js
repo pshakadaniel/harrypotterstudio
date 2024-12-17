@@ -151,10 +151,10 @@ particlesJS("particles-js", {
       resize: true,
     },
     modes: {
-      grab: { distance: 300, line_linked: { opacity: 2 } },
+      grab: { distance: 300, line_linked: { opacity: 7 } },
       bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
-      repulse: { distance: 320, duration: 0.3 },
-      push: { particles_nb: 20 },
+      repulse: { distance: 280, duration: 0.4 },
+      push: { particles_nb: 70 },
       remove: { particles_nb: 200 },
     },
   },
