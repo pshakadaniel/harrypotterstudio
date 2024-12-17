@@ -7,6 +7,8 @@ const body = document.body;
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme) {
   body.classList.add(savedTheme); // Apply the saved theme
+  toggleButton.textContent =
+    savedTheme === "light-mode" ? "/* Nox" : "/* Lumos"; // Set initial button text
 }
 
 // Add event listener for theme toggle
@@ -105,12 +107,12 @@ var typed = new Typed(".input", {
 
 particlesJS("particles-js", {
   particles: {
-    number: { value: 110, density: { enable: true, value_area: 999 } },
+    number: { value: 100, density: { enable: true, value_area: 1000 } },
     color: { value: "#00001b" },
     shape: {
-      type: "circle",
+      type: "random",
       stroke: { width: 0, color: "#641e1e" },
-      polygon: { nb_sides: 5 },
+      polygon: { nb_sides: 0 },
       image: { src: "img/github.svg", width: 100, height: 100 },
     },
     opacity: {
@@ -119,41 +121,41 @@ particlesJS("particles-js", {
       anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false },
     },
     size: {
-      value: 1,
-      random: true,
-      anim: { enable: false, speed: 90, size_min: 0.1, sync: false },
+      value: 9,
+      random: false,
+      anim: { enable: false, speed: 9, size_min: 0.1, sync: false },
     },
     line_linked: {
       enable: true,
       distance: 90,
       color: "#7bdff2",
-      opacity: 2,
-      width: 0.9,
+      opacity: 1,
+      width: 3,
     },
     move: {
       enable: true,
-      speed: 7,
+      speed: 3,
       direction: "none",
       random: false,
       straight: false,
       out_mode: "out",
       bounce: false,
-      attract: { enable: true, rotateX: 1200, rotateY: 1200 },
+      attract: { enable: true, rotateX: 200, rotateY: 200 },
     },
   },
   interactivity: {
     detect_on: "canvas",
     events: {
-      onhover: { enable: true, mode: "repulse" },
-      onclick: { enable: true, mode: "push" },
+      onhover: { enable: true, mode: "grab" },
+      onclick: { enable: true, mode: "repulse" },
       resize: true,
     },
     modes: {
-      grab: { distance: 400, line_linked: { opacity: 1 } },
+      grab: { distance: 300, line_linked: { opacity: 7 } },
       bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
-      repulse: { distance: 190, duration: 5 },
-      push: { particles_nb: 4 },
-      remove: { particles_nb: 2 },
+      repulse: { distance: 700, duration: 0.7 },
+      push: { particles_nb: 20 },
+      remove: { particles_nb: 200 },
     },
   },
   retina_detect: true,
