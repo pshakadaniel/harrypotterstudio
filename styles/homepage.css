@@ -21,13 +21,14 @@
 }
 /* Light Mode (Slytherin Green Theme) */
 body.light-mode {
-  --nav-side: var(--dark-bg-color);
+  --nav-side: var(--text-color);
   --background-color: var(--slytherinGreen-color);
   --text-color: black;
-  --header-scroll-color: var(--ravenclawblue-color);
+  --header-scroll-color: var(--yellowWhite-color);
   --welcome-text-color: var(--dark-bg-color);
   --sidebar-a: var(--dark-bg-color);
   --auth-btn-hover: var(--ravenclawblue-color);
+  --accordion-bg-color: var(--yellowWhite-color);
 }
 * {
   margin: 0;
@@ -45,16 +46,16 @@ body {
   text-align: center;
 }
 .nav-section {
-  scroll-margin-top: 180px;
+  scroll-margin-top: 9rem;
 }
 @media (max-width: 1000px) {
   .nav-section {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 5rem;
   }
 }
 @media (max-width: 768px) {
   .nav-section {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 5rem;
   }
 }
 @media (max-width: 375px) {
@@ -112,7 +113,7 @@ body {
   cursor: pointer;
   outline: inherit;
   font-weight: 700;
-  color: wheat;
+  color: var(--nav-side);
 }
 #theme-toggle:hover {
   color: var(--welcome-text-color);
@@ -173,7 +174,7 @@ body {
 .search-bar input {
   border: none;
   background-color: transparent;
-  color: #fff;
+  color: var(--nav-side);
   padding: 5px;
   font-size: 14px;
   outline: none;
@@ -512,11 +513,11 @@ button.ham-open-btn {
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 1rem;
-  color: white;
+  color: var(--text-color);
   letter-spacing: 0.14rem;
   text-align: left;
   width: 50vw;
-  border-bottom: 1px solid var(--gryffindoryellow-color);
+  border-bottom: 1px solid var(--nav-side);
 }
 .faq-icon {
   width: 18px;
