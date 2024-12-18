@@ -19,7 +19,7 @@
   --sidebar-a: var(--yellowWhite-color);
   --auth-btn-hover: var(--slytherinGreen-color);
 }
-/* Light Mode (Slytherin Green Theme) */
+/* Light Mode*/
 body.light-mode {
   --nav-side: var(--text-color);
   --background-color: var(--slytherinGreen-color);
