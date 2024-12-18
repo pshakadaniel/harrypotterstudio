@@ -111,11 +111,11 @@ body {
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  font-weight: 700;
+  font-weight: 1000;
   color: var(--nav-side);
 }
 #theme-toggle:hover {
-  color: var(--welcome-text-color);
+  color: var(--gold-color);
 }
 @media screen and (max-width: 1000px) {
   #theme-toggle {
