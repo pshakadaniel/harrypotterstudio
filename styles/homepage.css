@@ -5,6 +5,7 @@
   --ravenclawblue-color: #0e1a40;
   --hufflepuffyellow-color: #ecb939;
   --slytherinGreen-color: #1a472a;
+  --slytherinGreen-secondary-color: #226138;
   --dark-bg-color: #00001b;
   --yellowWhite-color: wheat;
   --background-color: var(--dark-bg-color);
@@ -15,7 +16,6 @@
   --text-color: #fff;
   --nav-side: var(--yellowWhite-color);
   --nav-hover: var(--gold-color);
-  --welcome-text-color: var(--slytherinGreen-color);
   --sidebar-a: var(--yellowWhite-color);
   --auth-btn-hover: var(--slytherinGreen-color);
 }
@@ -24,8 +24,7 @@ body.light-mode {
   --nav-side: var(--text-color);
   --background-color: var(--slytherinGreen-color);
   --text-color: black;
-  --header-scroll-color: var(--yellowWhite-color);
-  --welcome-text-color: var(--dark-bg-color);
+  --header-scroll-color: var(--slytherinGreen-secondary-color);
   --sidebar-a: var(--dark-bg-color);
   --auth-btn-hover: var(--ravenclawblue-color);
   --accordion-bg-color: var(--yellowWhite-color);
@@ -183,7 +182,7 @@ body {
   width: 32px;
   height: 32px;
   cursor: pointer;
-  fill: rgba(245, 222, 179, 0.701);
+  fill: var(--nav-side);
 }
 .header-logo {
   display: block;
@@ -335,7 +334,7 @@ button.ham-open-btn {
   width: 26px;
   height: 26px;
   z-index: 10000;
-  color: rgba(245, 222, 179, 0.746);
+  color: var(--nav-side);
 }
 .ham-hide-btn {
   cursor: pointer;
@@ -399,8 +398,8 @@ button.ham-open-btn {
   z-index: 1;
 }
 .input {
-  color: var(--welcome-text-color);
-  font-size: 2rem;
+  color: var(--nav-side);
+  font-size: 3rem;
   font-weight: 900;
 }
 
@@ -413,7 +412,7 @@ button.ham-open-btn {
 @media (max-width: 768px) {
   .hero-welcome-text h1,
   .input {
-    font-size: 1.4rem;
+    font-size: 2rem;
   }
 }
 
@@ -429,7 +428,7 @@ button.ham-open-btn {
 @media (max-width: 375px) {
   .hero-welcome-text h1,
   .input {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   .hero-welcome-text {
     margin-top: 3.5rem;
