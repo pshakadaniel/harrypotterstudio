@@ -1,20 +1,3 @@
-:root {
-  --gryffindorYellow-color: #d3a625;
-  --gryffindorRed-color: #641e1e;
-  --gold-color: #edc531;
-  --ravenclawBlue-color: #0e1a40;
-  --hufflepuffYellow-color: #ecb939;
-  --slytherinGreen-color: #1a472a;
-  --dark-bg-color: #00001b;
-  --yellowWhite-color: wheat;
-}
-*,
-element {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* Gradient Background CSS */
 .gradient-bg {
   background-size: 200% 200%;
@@ -74,12 +57,7 @@ element {
   left: 50%;
   transform: translateX(-50%);
   color: var(--dark-bg-color);
-  background-color: rgba(
-    245,
-    222,
-    179,
-    0.16
-  ); /* Use rgba with lesser opacity */
+  background: var(--yellowWhite-color);
   font-size: 1rem;
   font-weight: 900;
   border-radius: inherit;
@@ -98,7 +76,7 @@ element {
 .swiper-pagination-bullet {
   width: 8px; /* Make the bullet larger for better visibility */
   height: 8px; /* Equal width and height for circular bullets */
-  background: var(--gryffindorRed-color);
+  background: var(--gryffindorred-color);
   border-radius: 50%; /* Make bullets fully circular */
   margin: 0 5px; /* Add spacing between bullets */
   transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover or active state */
@@ -106,7 +84,7 @@ element {
 
 /* Adjust the bullet active */
 .swiper-pagination-bullet-active {
-  background: var(--gryffindorRed-color);
+  background: var(--gryffindorred-color);
   transform: scale(1.5); /* Slightly enlarge the active bullet */
 }
 
@@ -115,6 +93,6 @@ element {
   padding: 20px;
   border-radius: 15px;
   margin-top: 20px;
-  color: var(--gryffindorRed-color);
+  color: var(--text-color);
   font-weight: 900;
 }

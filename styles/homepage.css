@@ -13,7 +13,7 @@
   --accent-color: var(--gryffindoryellow-color);
   --header-scroll-color: #00002b;
   --accordion-bg-color: var(--ravenclawblue-color);
-  --text-color: #fff;
+  --text-color: #e9ecef;
   --nav-side: var(--yellowWhite-color);
   --nav-hover: var(--gold-color);
   --sidebar-a: var(--yellowWhite-color);
@@ -23,7 +23,7 @@
 body.light-mode {
   --nav-side: var(--text-color);
   --background-color: var(--slytherinGreen-color);
-  --text-color: black;
+  --text-color: #0a0908;
   --header-scroll-color: var(--slytherinGreen-secondary-color);
   --sidebar-a: var(--dark-bg-color);
   --auth-btn-hover: var(--ravenclawblue-color);
@@ -63,7 +63,7 @@ body {
   }
 }
 
-#particles-js {
+.particles-js {
   position: absolute;
   width: 100%;
   height: 100%;
