@@ -25,7 +25,6 @@ toggleButton.addEventListener("click", () => {
     toggleButton.textContent = "/* Lumos"; // Change button text to "Lumos"
   }
 });
-
 // sidebar toggle
 function toggleSB() {
   const sidebar = document.querySelector(".sidebar");
@@ -64,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const swiper = new Swiper(".swiper", {
       slidesPerView: "auto",
       spaceBetween: 20,
-      effect: "coverflow",
       autoplay: {
         delay: 900, // Time between slides in milliseconds (3 seconds)
         disableOnInteraction: false, // Continue autoplay after user interaction
