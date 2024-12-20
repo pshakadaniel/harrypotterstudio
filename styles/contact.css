@@ -16,9 +16,10 @@
 }
 
 .contact-form h1 {
-  font-size: 2.5rem;
-  color: var(--text-color);
-  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--nav-side);
+  margin-top: 2rem;
 }
 
 .contact-form {
