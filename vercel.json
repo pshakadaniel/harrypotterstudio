@@ -3,11 +3,15 @@
   "builds": [
     { "src": "api/*.js", "use": "@vercel/node" },
     { "src": "*.html", "use": "@vercel/static" },
-    { "src": "styles/*.css", "use": "@vercel/static" }
+    { "src": "styles/*.css", "use": "@vercel/static" },
+    { "src": "assets/*", "use": "@vercel/static" },
+    { "src": "*.js", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/api/submit_form", "dest": "/api/submit_form.js" },
     { "src": "/contact", "dest": "/contact.html" },
-    { "src": "/", "dest": "/index.html" }
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/(.*.js)", "dest": "/$1" }
   ]
 }
