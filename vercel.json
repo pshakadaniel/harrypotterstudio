@@ -1,5 +1,10 @@
 {
   "version": 2,
+  "rewrites": [
+    { "source": "/submit_form", "destination": "/api/submit_form" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/", "destination": "/index.html" }
+  ],
   "builds": [
     { "src": "api/*.js", "use": "@vercel/node" },
     { "src": "*.html", "use": "@vercel/static" },
