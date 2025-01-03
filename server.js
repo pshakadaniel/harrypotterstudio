@@ -7,10 +7,10 @@ require("dotenv").config();
 
 const app = express();
 
-// Enable CORS for your frontend domain
+// Enable CORS for your frontend domain (update this to your actual frontend URL)
 app.use(
   cors({
-    origin: "https://your-project.vercel.app/api/submit_form", // Your frontend URL
+    origin: "https://harrypotterstudio.vercel.app", // Your actual frontend URL
     methods: ["GET", "POST"], // Allowed HTTP methods
     allowedHeaders: ["Content-Type"], // Allowed headers
   })
@@ -21,10 +21,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.error("Error connecting to MongoDB:", err));
 
 // Define a schema and model for the form data
 const formSchema = new mongoose.Schema({
@@ -42,27 +45,32 @@ app.get("/", (req, res) => {
 });
 
 // Handle form submissions
-app.post("/api/submit_form", (req, res) => {
+app.post("/api/submit_form", async (req, res) => {
   const { name, email, subject, message } = req.body;
 
+  // Validate form data
   if (!name || !email || !subject || !message) {
     return res.status(400).json({ error: "All fields are required." });
   }
 
-  const newForm = new Form({ name, email, subject, message });
+  try {
+    const newForm = new Form({ name, email, subject, message });
+    await newForm.save();
+    console.log("Form submitted:", req.body);
+    return res.status(200).json({ message: "Form submitted successfully!" });
+  } catch (err) {
+    console.error("Error saving form data:", err);
+    return res.status(500).json({ error: "Error saving form data." });
+  }
+});
 
-  newForm.save((err) => {
-    if (err) {
-      console.error("Error saving form data:", err);
-      return res.status(500).json({ error: "Error saving form data." });
-    } else {
-      console.log("Form submitted:", req.body);
-      return res.status(200).json({ message: "Form submitted successfully!" });
-    }
-  });
+// Fallback for other routes
+app.use((req, res) => {
+  res.status(404).json({ error: "Route not found" });
 });
 
 // Start the server
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+const PORT = process.env.PORT || 3000; // Use Vercel's PORT environment variable
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
