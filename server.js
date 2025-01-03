@@ -10,7 +10,7 @@ const app = express();
 // Enable CORS for your frontend domain
 app.use(
   cors({
-    origin: "https://harrypotterstudio.vercel.app/", // Replace with your actual frontend URL
+    origin: "https://your-project.vercel.app/api/submit_form", // Your frontend URL
     methods: ["GET", "POST"], // Allowed HTTP methods
     allowedHeaders: ["Content-Type"], // Allowed headers
   })
