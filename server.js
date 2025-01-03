@@ -11,7 +11,7 @@ app.use(
   cors({
     origin: "http://harrypotterstudio.vercel.app", // Your actual frontend URL
     methods: ["GET", "POST"], // Allowed HTTP methods
-    allowedHeaders: ["Content-Type"], // Allowed headers
+    credentials: true, // Include cookies
   })
 );
 // Parse URL-encoded data and JSON
