@@ -7,8 +7,13 @@ require("dotenv").config();
 
 const app = express();
 
-app.use(cors()); // Enable CORS
-
+app.use(
+  cors({
+    origin: "http://harrypotterstudio.vercel.app", // Your actual frontend URL
+    methods: ["GET", "POST"], // Allowed HTTP methods
+    allowedHeaders: ["Content-Type"], // Allowed headers
+  })
+);
 // Parse URL-encoded data and JSON
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
