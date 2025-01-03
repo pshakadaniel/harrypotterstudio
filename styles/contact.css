@@ -4,6 +4,7 @@
   box-shadow: none;
   width: 100%;
   height: auto;
+  min-height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -18,7 +19,7 @@
   font-size: 2rem;
   font-weight: 700;
   color: var(--nav-side);
-  margin-top: 8rem;
+  margin-top: 2rem;
 }
 
 .contact-form {
@@ -78,36 +79,16 @@
   background-color: var(--gold-color);
 }
 
-@media screen and (min-width: 2440px) {
-  .contact-form h1 {
-    margin-top: 8rem;
-    font-size: 3rem;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .contact-form h1 {
-    margin-top: 7rem;
+@media (max-width: 768px) {
+  .contact-container h1 {
     font-size: 2rem;
   }
-}
 
-@media screen and (max-width: 768px) {
-  .contact-form h1 {
-    margin-top: 3.4rem;
-    font-size: 1.6rem;
+  .contact-form {
+    padding: 20px;
   }
-}
 
-@media screen and (max-width: 480px) {
-  .contact-form h1 {
-    margin-top: 2.4rem;
-    font-size: 2rem;
-  }
-}
-
-@media screen and (max-width: 380px) {
-  .contact-form h1 {
-    margin-top: 2.4rem;
-    font-size: 1.8rem;
+  .submit-btn {
+    font-size: 1rem;
   }
 }
