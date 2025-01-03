@@ -7,6 +7,8 @@ require("dotenv").config();
 
 const app = express();
 
+app.use(cors()); // Enable CORS
+
 // Parse URL-encoded data and JSON
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -53,6 +55,11 @@ app.post("/api/submit_form", async (req, res) => {
     console.error("Error saving form data:", err);
     return res.status(500).json({ error: "Error saving form data." });
   }
+});
+
+// Catch-all route to handle 404 errors
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "contact.html"));
 });
 
 // Fallback for other routes
