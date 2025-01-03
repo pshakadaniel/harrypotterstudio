@@ -7,16 +7,6 @@ require("dotenv").config();
 
 const app = express();
 
-// Enable CORS for your frontend domain (update this to your actual frontend URL)
-app.use(
-  cors({
-    origin:
-      "https://harrypotterstudio-h05zcljwb-pyae-sone-heins-projects.vercel.app", // Your actual frontend URL
-    methods: ["GET", "POST"], // Allowed HTTP methods
-    allowedHeaders: ["Content-Type"], // Allowed headers
-  })
-);
-
 // Parse URL-encoded data and JSON
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
