@@ -3,12 +3,8 @@
   "version": "1.0.0",
   "main": "api/submit_form",
   "scripts": {
-  "dev": "nodemon server.js",             
-  "build": "vercel build",                
-  "deploy": "vercel deploy --prod",      
-  "lint": "eslint . --ext .js",           
-  "test": "jest"                         
-},
+    "dev": "node server.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
